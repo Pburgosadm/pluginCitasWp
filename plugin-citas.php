@@ -83,7 +83,7 @@ if ( ! class_exists( 'plugin_citas' ) ) {
 		 */
 		public function includes() {
             // Example
-			require_once __DIR__ . '/includes/loader.php';
+		//	require_once __DIR__ . '/includes/loader.php';
 
 			// Load custom functions and hooks
 			require_once __DIR__ . '/includes/includes.php';
@@ -114,6 +114,10 @@ if ( ! class_exists( 'plugin_citas' ) ) {
 		 */
 		public function define_actions() {
 			//
+			add_action( 'add_meta_boxes', 'function_campos_citas' );
+			add_action( 'save_post', 'campos_personalizados_citas_save_data' );
+            add_action('init', 'shortcodes_init');
+			
 		}
 
 		/**
